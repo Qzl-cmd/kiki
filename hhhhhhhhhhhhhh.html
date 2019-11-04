@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+       #box{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+       }
+    </style>
+     <script >
+        window.onload=function(){
+        var box=document.getElementById("box");
+        var timer=setInterval(function(){
+            var left =parseInt(box.style.left);
+        
+            if(left>600){
+            left=50;   clearInterval(timer);}
+            box.style.left=left+1+"px";
+        },10)
+    }
+    
+      </script>
+</head>
+<body >
+     <div id="box" style="top:100px; left:50px;">
+       
+  
+</body>
+</html>
