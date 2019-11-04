@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style type="text/css">
-       #box{
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background-color: black;
-       }
-    </style>
-     <script >
-        window.onload=function(){
-        var box=document.getElementById("box");
-        var timer=setInterval(function(){
-            var left =parseInt(box.style.left);
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
         
-            if(left>600){
-            left=50;   clearInterval(timer);}
-            box.style.left=left+1+"px";
-        },10)
-    }
-    
-      </script>
 </head>
-<body >
-     <div id="box" style="top:100px; left:50px;">
-       
-  
+<body onclick="ds()">
+      <!--<form id="form1" name="myform" action="#">
+        <input id="male" type="radio" name="gender" value="男">
+        <label for="male">男</label>
+        <input id="male" type="radio" name="gender" value="女">
+        <label for="male">女</label>
+
+      </form>
+      <div id="movie">
+              <button>nihao</button>
+              <p>sss</p>
+
+      </div>-->
+    
+      <SELECT id="radixList" style="width:150" name="state" selectedIndex="$!{state}" onclick="ds()"> 
+                <OPTION value="1" onclick="ds()">10转2</OPTION> 
+                <OPTION value="2" onclick="ds()">10转8</OPTION> 
+                <OPTION value="3">10转16</OPTION> 
+                <OPTION value="4">2转10</OPTION> 
+                <OPTION value="5">8转10</OPTION> 
+                <OPTION value="6">16转10</OPTION> 
+                <OPTION value="7">2转8</OPTION> 
+                <OPTION value="8">8转2</OPTION> 
+                <OPTION value="9">2转16</OPTION> 
+                <OPTION value="10">16转2</OPTION> 
+                <OPTION value="11">8转16</OPTION> 
+                <OPTION value="12">16转8</OPTION> 
+                </SELECT> 
+        请输入数字: <input type="text" id="fname" onclick="ds()" />
+        返回结果: <input type="text" id="lname" onclick="ds()" />
+        <button onclick="ds()">"点我点我"</button>
+        <button onclick="ds()">change</button>
+      <script src="js/JS hello.js" type="text/javascript"></script>
+      <button onclick="convert()">change</button>
+
 </body>
 </html>
