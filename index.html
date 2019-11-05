@@ -4,63 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>小亮的每日游戏--001</title>
-</head>
-<style type="text/css">
-    .col{
-        background-color: black;
-        width: 100px;
-        height: 100px;
+    <title>小亮的GitHub</title>
+    <style type="text/css">
+    .top{
+        padding-left:40px ;
+        overflow: hidden;
+        width: 1087px;
+        height: 150px;
     }
-</style>
-<script>
- var begin=document.getElementById("begin");
-    var timer=true;
-    var result="";
-    function  tingzhi(){
-        var operator=document.getElementById("operator");
-        var msg=document.getElementById("msg");
-        timer=false;
-        if(result===operator.value){
-               msg.innerText="恭喜您答对了";
-            }else{
-               msg.innerText="很遗憾您答错了了";
+    .img1{
+        display: inline;
+        float: left;
+    }
+    .top ul li{ float: left; list-style: none; padding-left:20px ;}
+    .top ul li a{text-decoration: none;}
+    .wenben{
+        padding-left:40px ;
+    }
+    textarea{
+       width: 600px;
+       height: 200px;
+    }
+    </style>
+    <script>
+         var xmlHttp;
+    function createXMLHttpRequest(){
+        if(window.ActiveXObject){
+            xmlHttp=new ActiveXObject("Microsoft.XMLHttp");
+        }else{
+            xmlHttp=new XMLHttpRequest();
+        }
+    }
+    function GetResult(){
+        var wenben =document.getElementById("Button1");
+        createXMLHttpRequest();
+        xmlHttp.open("get","data.txt",true);
+        xmlHttp.onreadystatechange=function (){
+            if(xmlHttp.readyState==4&&xmlHttp.status==200){
+
+               alert(xmlHttp.responseText);
             }
-       
- }
-function kaishi(){
-       var msg=document.getElementById("msg");
-       msg.innerText="";
-       var jishi= setInterval(function (){
-           if(timer==true){
-        var arr=new Array("red","yellow","blue","orange","purple","black");
-        var arr1=Math.floor(Math.random()*5)
-        document.getElementById("box3").style.backgroundColor=arr[arr1];
-        result=arr[arr1];
         }
-        else{
-            clearInterval(jishi);
-            timer=true;
-        }
-     },10)
- }
-</script>
+        xmlHttp.send(null);
+    }
+    </script>
+</head>
 <body>
-    <div class="col" id="box3"></div>
-    <button onclick='kaishi()' id="begin">开始</button>
-    <button onclick="tingzhi()" id="stop">停止</button>
-    <br>
-    <label>请选择颜色：</label>
-    <select name="" id="operator">
-        <option value="black" >黑色</option>
-        <option value="blue">蓝色</option>
-        <option value="red">红色</option>
-        <option value="orange">橙色</option>
-        <option value="yellow">黄色</option>
-        <option value="purple">紫色</option>
-    </select>
-    <br>
-    <div id="msg"></div>
-    
+    <div class="top">
+        <h3>安静简单</h3>
+        <div class="img1"><img src="001.png" alt="" width="75px" height="75px"></div>
+        <div><ul><li><a href="">主页</a></li>
+                 <li><a href="">日志</a></li>
+                 <li><a href="">相册</a></li>
+                 <li><a href="">留言板</a></li>
+                 <li><a href="">说说</a></li>
+                 <li><a href="">个人档</a></li>
+                 <li><a href="">音乐</a></li>
+            </ul>
+        </div>
+        <h3></h3>
+       
+    </div>
+    <div class="wenben">
+            <textarea name="" id="liuyanban"" cols="30" rows="10"></textarea>
+            <br>
+            <input type="button"  id="Button1" value="读取数据"  onclick="GetResult()" />
+        </div>
 </body>
 </html>
