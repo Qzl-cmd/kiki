@@ -27,26 +27,6 @@
     }
     </style>
     <script>
-         var xmlHttp;
-    function createXMLHttpRequest(){
-        if(window.ActiveXObject){
-            xmlHttp=new ActiveXObject("Microsoft.XMLHttp");
-        }else{
-            xmlHttp=new XMLHttpRequest();
-        }
-    }
-    function GetResult(){
-        var wenben =document.getElementById("Button1");
-        createXMLHttpRequest();
-        xmlHttp.open("get","data.txt",true);
-        xmlHttp.onreadystatechange=function (){
-            if(xmlHttp.readyState==4&&xmlHttp.status==200){
-
-               alert(xmlHttp.responseText);
-            }
-        }
-        xmlHttp.send(null);
-    }
     </script>
 </head>
 <body>
