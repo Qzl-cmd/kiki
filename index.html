@@ -6,14 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>小亮的GitHub</title>
     <style type="text/css">
+    .top{
+        padding-left:40px ;
+        overflow: hidden;
+        width: 1087px;
+        height: 150px;
+    }
+    .img1{
+        display: inline;
+        float: left;
+    }
+    .top ul li{ float: left; list-style: none; padding-left:20px ;}
+    .top ul li a{text-decoration: none;}
+    .wenben{
+        padding-left:40px ;
+    }
+    textarea{
+       width: 600px;
+       height: 200px;
+    }
     </style>
-    <script>
-    </script>
+    <!-- <script>
+         var xmlHttp;
+    function createXMLHttpRequest(){
+        if(window.ActiveXObject){
+            xmlHttp=new ActiveXObject("Microsoft.XMLHttp");
+        }else{
+            xmlHttp=new XMLHttpRequest();
+        }
+    }
+    function GetResult(){
+        var wenben =document.getElementById("Button1");
+        createXMLHttpRequest();
+        xmlHttp.open("get","data.txt",true);
+        xmlHttp.onreadystatechange=function (){
+            if(xmlHttp.readyState==4&&xmlHttp.status==200){
+
+               alert(xmlHttp.responseText);
+            }
+        }
+        xmlHttp.send(null);
+    }
+    </script> -->
 </head>
 <body>
     <div class="top">
         <h3>安静简单</h3>
-        <div class="img1"><img src="" alt="" width="75px" height="75px"></div>
+        <div class="img1"><img src="001.png" alt="" width="75px" height="75px"></div>
         <div><ul><li><a href="">主页</a></li>
                  <li><a href="">日志</a></li>
                  <li><a href="">相册</a></li>
