@@ -6,18 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>小亮的GitHub</title>
     <style type="text/css">
+      body {
+    background: #353535;
+}
+.yinyue{
+    width: 100%;text-align: center;
+}
+.yinyue span{
+    cursor: pointer;
+}
+.yinyue span a {
+    width: 100px;
+    display: block;
+    position: relative;
+    border: 1px solid #D24D57;
+    margin: 20px auto;
+    padding: 7px 8px;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+}
+.yinyue span a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    background: #D24D57;
+    transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+    -webkit-transition: all 0.75s ease 0s;
+    -moz-transition: all 0.75s ease 0s;
+    -o-transition: all 0.75s ease 0s;
+    transition: all 0.75s ease 0s;
+}
+.yinyue span a:hover:after {
+    height: 300%;
+}
     .top{
         padding-left:40px ;
         overflow: hidden;
         width: 1087px;
-        height: 150px;
+        height: 300px;
     }
     .img1{
         display: inline;
         float: left;
     }
-    .top ul li{ float: left; list-style: none; padding-left:20px ;}
-    .top ul li a{text-decoration: none;}
+    .top ul li{ float: left; list-style: none; padding-left:20px ; }
+    .top ul li a{text-decoration: none;color: #D24D57;}
     .wenben{
         padding-left:40px ;
     }
@@ -48,10 +89,16 @@
         xmlHttp.send(null);
     }
     </script>  -->
+ 
 </head>
 <body>
     <div class="top">
-        <h3>安静简单</h3>
+        <h3>安静简单的今日音乐</h3>
+        <audio id="player">
+                <source src="https://qzl-cmd.github.io/kiki/我的梦想.mp3"></source>
+            </audio>
+            <div class="yinyue" id="start"><span><a>开始</a></span></div>
+            <div class="yinyue" id="stop"><span><a>暂停</a></span></div>
         <div class="img1"><img src="https://qzl-cmd.github.io/kiki/001.png" alt="" width="75px" height="75px"></div>
         <div><ul><li><a href="">主页</a></li>
                  <li><a href="">日志</a></li>
@@ -70,5 +117,13 @@
             <br>
             <input type="button"  id="Button1" value="读取数据"  onclick="GetResult()" />
         </div>
+        <script type="text/javascript">
+            document.getElementById('start').onclick = function(){
+                player.play();
+            }
+            document.getElementById('stop').onclick = function(){
+                player.pause();
+            }
+        </script>
 </body>
 </html>
