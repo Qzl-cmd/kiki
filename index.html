@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>小亮的GitHub</title>
+    <style>
+            <!--
+          .datas  table{ text-align: center }
+            -->
+            .datas{
+                background-color:#f755;
+                width: 335px; 
+                height: 230px;  
+                float: right;     }
+            .datas table{
+                border:1px solid #F00;
+                border-collapse:collapse;
+            }
+            .datas table tr{
+                border: none;
+            }
+            .datas table tr td{
+                border: 1px solid red;
+            }
+           .datas a{
+                text-decoration:none;
+            }
+           </style>
     <style type="text/css">
       body {
     background: #353535;
 }
 .yinyue{
-    width: 100%;text-align: center;
+    width: 100px;text-align: center;
+    display:block;
 }
 .yinyue span{
     cursor: pointer;
@@ -48,24 +72,19 @@
     height: 300%;
 }
     .top{
+        float: left;
         padding-left:40px ;
         overflow: hidden;
-        width: 1087px;
         height: 300px;
     }
     .img1{
-        display: inline;
         float: left;
+    }
+    .top ul{
+        float: ;
     }
     .top ul li{ float: left; list-style: none; padding-left:20px ; }
     .top ul li a{text-decoration: none;color: #D24D57;}
-    .wenben{
-        padding-left:40px ;
-    }
-    textarea{
-       width: 600px;
-       height: 200px;
-    }
     </style>
      <!-- <script>
          var xmlHttp;
@@ -95,7 +114,7 @@
     <div class="top">
         <h3>安静简单的今日音乐</h3>
         <audio id="player">
-                <source src="https://qzl-cmd.github.io/kiki/我的梦想.mp3"></source>
+                <source src="https://qzl-cmd.github.io/kiki/iloveyou.mp3"></source>
             </audio>
             <div class="yinyue" id="start"><span><a>开始</a></span></div>
             <div class="yinyue" id="stop"><span><a>暂停</a></span></div>
@@ -106,16 +125,93 @@
                  <li><a href="">留言板</a></li>
                  <li><a href="">说说</a></li>
                  <li><a href="">个人档</a></li>
-                 <li><a href="">音乐</a></li>
             </ul>
         </div>
         <h3></h3>
-       
+        
     </div>
-    <div class="wenben">
-            <textarea name="" id="liuyanban"" cols="30" rows="10"></textarea>
-            <br>
-            <input type="button"  id="Button1" value="读取数据"  onclick="GetResult()" />
+        <div style="float: right; width: 400px; ">
+                <div class="datas" align="center" >
+                        <script language="javascript">
+                         var my = new Date();
+                         function showc() {
+                          var k=1;
+                          var j=1;
+                          var today;
+                          var tomonth;
+                          var theday=1;//日期
+                          var max;
+                          var temp;
+                          var tempday;//这个月第一天的星期
+                          document.write ("<b>" + my.getFullYear() + "-" + (my.getMonth()+1) + "</b>");
+                          document.write ("<table border='1' width='273' height='158'>");
+                          document.write ("<tr>");
+                          document.write ("<td height='23' width='39'><font color='red'>Sun</font></td>");
+                          document.write ("<td height='23' width='39'>Mon</td>");
+                          document.write ("<td height='23' width='39'>Tue</td>");
+                          document.write ("<td height='23' width='39'>Wed</td>");
+                          document.write ("<td height='23' width='39'>Thu</td>");
+                          document.write ("<td height='23' width='39'>Fri</td>");
+                          document.write ("<td height='23' width='39'>Sat</td>");
+                          document.write ("</tr>");
+                          temp=my.getDate();
+                          my.setDate(1);
+                          //document.write (my.getDate());
+                          tempday=my.getDay();//返回第一天是星期几
+                          my.setDate(temp);
+                          today=my.getDay();//返回现在星期几
+                          switch ((my.getMonth()+1)) {
+                           case 1:
+                           case 3:
+                           case 5:
+                           case 7:
+                           case 8:
+                           case 10:
+                           case 12:
+                            max=31;
+                            break;
+                           case 4:
+                           case 6:
+                           case 9:
+                           case 11:
+                            max=30;
+                            break;
+                           default:
+                            max=29;//这里没有考虑闰月！！
+                           //document.write (max);
+                          }
+                          for(k=0;k<6;k++) {
+                           document.write ("<tr>");
+                           for(j=0;j<=6;j++) {
+                            document.write ("<td height='23' width='39'>");
+                            if(j>=(tempday)) {
+                             tempday=0;//设置为最小，相当于取消判断条件
+                             if(theday<=max) {
+                              document.write ("<a title=" + my.getFullYear() + "-" + (my.getMonth()+1) + "-" +theday + " target='_blank' href=detail.asp?date=" + theday + ">");
+                              if(theday==my.getDate()){
+                               document.write ("<font color='skyblue'>[" + theday + "]</font></a>");}
+                               else if(j==0)
+                               document.write ("<font color='red'>" + theday + "</font></a>");
+                              else
+                               document.write (theday + "</a>");
+                              theday++;
+                             }
+                            }
+                            document.write ("</td>");
+                           }
+                           document.write ("</tr>");
+                          }
+                          document.write ("</table>");
+                          var datetime=new Date();
+                          document.write(datetime.toLocaleTimeString());
+                          var widthzkd=document.getElementById("top");
+                          widthzkd.style.width.screen.width;
+                         }
+                       
+                         showc();
+                     </script>
+                    </div>
+        
         </div>
         <script type="text/javascript">
             document.getElementById('start').onclick = function(){
