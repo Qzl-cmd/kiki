@@ -10,7 +10,7 @@
           .datas  table{ text-align: center }
             -->
             .datas{
-                background-color:#f755;
+                opacity:0.5;
                 width: 335px; 
                 height: 230px;  
                 float: right;     }
@@ -30,7 +30,10 @@
            </style>
     <style type="text/css">
       body {
-    background: #353535;
+         background: url(backone.jpg) no-repeat;
+         background-size:cover;background-size:100%;
+         height:100%;
+         width:100%;
 }
 .yinyue{
     width: 100px;text-align: center;
@@ -47,7 +50,7 @@
     margin: 20px auto;
     padding: 7px 8px;
     font-size: 10px;
-    color: #fff;
+    color:#000;
     text-align: center;
     text-decoration: none;
     overflow: hidden;
@@ -81,10 +84,13 @@
         float: left;
     }
     .top ul{
-        float: ;
+    
     }
     .top ul li{ float: left; list-style: none; padding-left:20px ; }
     .top ul li a{text-decoration: none;color: #D24D57;}
+    .ulone{
+        float: left;
+    }
     </style>
      <!-- <script>
          var xmlHttp;
@@ -112,14 +118,15 @@
 </head>
 <body>
     <div class="top">
-        <h3>安静简单的今日音乐</h3>
+        来这里听一首歌吧
+        <h3>安静简单的今日音乐:陈年Demo</h3>
         <audio id="player">
-                <source src="https://qzl-cmd.github.io/kiki/Iloveyou.mp3"></source>
+                <source src="https://qzl-cmd.github.io/kiki/demo.mp3"></source>
             </audio>
             <div class="yinyue" id="start"><span><a>开始</a></span></div>
             <div class="yinyue" id="stop"><span><a>暂停</a></span></div>
         <div class="img1"><img src="https://qzl-cmd.github.io/kiki/001.png" alt="" width="75px" height="75px"></div>
-        <div><ul><li><a href="">主页</a></li>
+        <div class="ulone"><ul><li><a href="">主页</a></li>
                  <li><a href="">日志</a></li>
                  <li><a href="">相册</a></li>
                  <li><a href="">留言板</a></li>
@@ -127,7 +134,7 @@
                  <li><a href="">个人档</a></li>
             </ul>
         </div>
-        <h3></h3>
+    
         
     </div>
         <div style="float: right; width: 400px; ">
@@ -207,7 +214,6 @@
                           var widthzkd=document.getElementById("top");
                           widthzkd.style.width.screen.width;
                          }
-                       
                          showc();
                      </script>
                     </div>
